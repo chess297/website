@@ -6,7 +6,6 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenkhat.github.io/blog/"/>
     <subtitle>陈运棋的个人播客 Blog</subtitle>
-    <icon>https://chenkhat.github.io/blog/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[欢迎访问]]></title>
         <id>欢迎访问</id>
