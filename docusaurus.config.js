@@ -23,9 +23,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          // sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: 'https://github.com/ChenKhat/blog/tree/main/docs',
         },
         blog: {
           showReadingTime: true,
@@ -33,8 +33,8 @@ const config = {
           blogSidebarCount: 10,
           // Please change this to your repo.
           routeBasePath:'/',
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+          //   'https://github.com/ChenKhat/blog/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -53,12 +53,11 @@ const config = {
         //   src: 'https://github.com/ChenKhat.png',
         // },
         items: [
-
           // {
           //   type: 'doc',
           //   docId: 'intro',
           //   position: 'left',
-          //   label: 'Tutorial',
+          //   label: '读书/电影有感',
           // },
           // {to: '/blog', label: 'Blog', position: 'left'},
           // {
