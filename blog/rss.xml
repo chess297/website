@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Chen Yunqi's Blog Blog</title>
+        <link>https://chenkhat.github.io/blog/blog</link>
+        <description>Chen Yunqi's Blog Blog</description>
+        <lastBuildDate>Thu, 20 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[欢迎访问]]></title>
+            <link>https://chenkhat.github.io/blog/blog/欢迎访问</link>
+            <guid>欢迎访问</guid>
+            <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[为什么写播客？]]></description>
+            <content:encoded><![CDATA[<h2>为什么写播客？</h2><p>过去一直觉得，人的一生，匆匆的来，匆匆的走。不留下任何云彩那叫潇洒，不矫情。
+直到最近家人去世，才发现，活着的几十年时间里，是要留下点什么用来回忆，留恋的。
+希望这一切，现在开始改变，不会太晚。</p><h2>要写一些什么？</h2><p>什么都写吧，学习、工作、生活，所有的一切，把好的都分享出来，大家一起快乐。</p><h2>我的信仰</h2><p>有时候我会很羡慕一些有宗教信仰的人，即使什么都没有了，至少还有信仰，会知道自己为什么活着，
+也因为曾经收到过一些挫折，抑郁过。
+而现在，我选择相信科学，相信虚拟的技术能开拓更多现实，加油。</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
