@@ -27,10 +27,12 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.navbar{
-  display: none;
-}
-
-/*.footer{*/
-/*  */
+/*.navbar{*/
+/*  display: none;*/
 /*}*/
+
+.footer{
+  padding: 20px;
+  line-height: 12px;
+  font-size: 12px;
+}

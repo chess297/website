@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '陈运棋的个人播客',
-  tagline: 'Dinosaurs are cool',
+  title: 'Chen Yunqi\'s Blog',
+  tagline: '享受编程',
   url: 'https://chenkhat.github.io/',
   baseUrl: '/blog/',
   onBrokenLinks: 'throw',
@@ -32,7 +32,7 @@ const config = {
           blogSidebarTitle:'最新文章',
           blogSidebarCount: 10,
           // Please change this to your repo.
-          routeBasePath:'/',
+          // routeBasePath:'/',
           // editUrl:
           //   'https://github.com/ChenKhat/blog/tree/main/',
         },
@@ -46,12 +46,57 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      hideableSidebar:true,
       navbar: {
+        hideOnScroll:true,
         items: [
+          {
+            type:'doc',
+            docId: 'vue/index',
+            label: 'Vue',
+            position:'left',
+          },
+          {
+            type:'doc',
+            docId: 'react/index',
+            label: 'React',
+            position:'left'
+          },
+          {
+            to:'/docs/golang',
+            label: 'Golang',
+            position:'left'
+          },
+          {
+            to:'/docs/english',
+            label: 'English',
+            position:'left'
+          },
+          {
+            to:'/docs/math',
+            label: 'Math',
+            position:'left'
+          },
+          {
+            type:'doc',
+            docId: 'framework/index',
+            label: 'Framework',
+            position:'left'
+          },
+          {
+            to:'/blog',
+            label: 'Blog',
+            position:'right'
+          },
+          {
+            to: 'https://github.com/ChenKhat',
+            label: "GitHub",
+            position: 'right'
+          }
         ],
       },
       footer: {
-        copyright: `Copyright © ${new Date().getFullYear()} 陈运棋 blog`,
+        copyright: `Copyright © ${new Date().getFullYear()} Chen Yunqi's blog`,
       },
       prism: {
         theme: lightCodeTheme,
