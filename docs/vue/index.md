@@ -1,5 +1,5 @@
 ---
-title: Vue学习计划和目标
+title: Vue概览
 tags: [Vue]
 ---
 
@@ -7,11 +7,20 @@ vue算是一个非常🔥的一个前端框架了，特别是国内，尤其的�
 
 ## 底层原理核心
 
+### 一些重要概念
+
+- `compiler`，编译模块，将html模板编译成`ast`语法树，然后再编译成`render`函数
+- ` Dep`类，主要用于数据劫持后，调用get进行的依赖收集
+- `Watcher`类，主要用于观察被Dep劫持的数据
+  - 渲染`Watcher`，Dep派发数据set之后，触发组件update
+  - 计算`Watcher`，Dep派发数据set之后，触发数据计算
+  - 监听`Watcher`，Dep派发数据set之后，触发用户对数据的监听回调
+
 ### 初始化到页面渲染
 
 [1.初始化构造函数](./vue/Vue2/原理/初始化Vue构造器)  
 [2.new Vue()](./vue/Vue2/原理/初始化Vue构造器)  
-[3.依赖手机 Object.definePropety](./vue/Vue2/原理/初始化Vue构造器)  
+[3.依赖手机 Object.defineProperty](./vue/Vue2/原理/初始化Vue构造器)  
 [4.render函数生成vnode，update渲染页面](./vue/Vue2/原理/初始化Vue构造器)  
 
 
