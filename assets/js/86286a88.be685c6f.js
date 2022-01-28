@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[99],{5420:function(a){a.exports=JSON.parse('{"name":"Math","permalink":"/blog/docs/tags/math","docs":[{"id":"math/index","title":"\u6570\u5b66\u77e5\u8bc6\u70b9\u5f52\u7eb3","description":"","permalink":"/blog/docs/math/"}],"allTagsPath":"/blog/docs/tags"}')}}]);
