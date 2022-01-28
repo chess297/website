@@ -79,7 +79,7 @@ const config = {
           },
           {
             type:'doc',
-            docId: 'framework/index',
+            docId: 'framework/前端架构/工程化/编码层面的工程化',
             label: 'Framework',
             position:'left'
           },
