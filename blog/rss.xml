@@ -4,9 +4,17 @@
         <title>Chen Yunqi's Blog Blog</title>
         <link>https://chenkhat.github.io/blog/blog</link>
         <description>Chen Yunqi's Blog Blog</description>
-        <lastBuildDate>Thu, 20 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 29 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[欢迎访问]]></title>
+            <link>https://chenkhat.github.io/blog/blog/2022学习目标</link>
+            <guid>2022学习目标</guid>
+            <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[2022年学习目标]]></description>
+            <content:encoded><![CDATA[<h2>2022年学习目标</h2><h3>软实力</h3><h4>坚持记录学习笔记</h4><h4>英语、数学</h4><h5>英语</h5><p>听、说、读、写; 语音、语法</p><h4>沟通</h4><h3>硬实力</h3><h4>前端框架</h4><ul><li>vue3 <ul><li>pinia</li><li>vue-router</li></ul></li><li>react<ul><li>react-router</li><li>redux</li><li>react-query</li><li>nextjs</li></ul></li><li>Echarts</li><li>taro<ul><li>微信小程序</li></ul></li><li>Flutter</li><li>tauri<ul><li>rust</li></ul></li><li>vite</li><li>turborepo</li></ul><h4>后端框架</h4><ul><li>nestjs<ul><li>node</li><li>mysql</li><li>mongodb</li><li>redis</li><li>服务端部署等知识</li></ul></li><li>gin</li></ul><h4>AI</h4><ul><li></li></ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[欢迎访问]]></title>
             <link>https://chenkhat.github.io/blog/blog/欢迎访问</link>

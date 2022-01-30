@@ -2,10 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenkhat.github.io/blog/blog</id>
     <title>Chen Yunqi's Blog Blog</title>
-    <updated>2022-01-20T00:00:00.000Z</updated>
+    <updated>2022-01-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenkhat.github.io/blog/blog"/>
     <subtitle>Chen Yunqi's Blog Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[欢迎访问]]></title>
+        <id>2022学习目标</id>
+        <link href="https://chenkhat.github.io/blog/blog/2022学习目标"/>
+        <updated>2022-01-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2022年学习目标]]></summary>
+        <content type="html"><![CDATA[<h2>2022年学习目标</h2><h3>软实力</h3><h4>坚持记录学习笔记</h4><h4>英语、数学</h4><h5>英语</h5><p>听、说、读、写; 语音、语法</p><h4>沟通</h4><h3>硬实力</h3><h4>前端框架</h4><ul><li>vue3 <ul><li>pinia</li><li>vue-router</li></ul></li><li>react<ul><li>react-router</li><li>redux</li><li>react-query</li><li>nextjs</li></ul></li><li>Echarts</li><li>taro<ul><li>微信小程序</li></ul></li><li>Flutter</li><li>tauri<ul><li>rust</li></ul></li><li>vite</li><li>turborepo</li></ul><h4>后端框架</h4><ul><li>nestjs<ul><li>node</li><li>mysql</li><li>mongodb</li><li>redis</li><li>服务端部署等知识</li></ul></li><li>gin</li></ul><h4>AI</h4><ul><li></li></ul>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[欢迎访问]]></title>
         <id>欢迎访问</id>
