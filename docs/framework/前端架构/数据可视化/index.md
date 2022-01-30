@@ -7,6 +7,9 @@ tags: [数据可视化]
 
 - Canvas
 - Svg
+  - ViewPort
+  - ViewBox
+  - preser
 - WebGL
 
 ## 常用的框架和库
