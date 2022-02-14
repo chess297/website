@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Chen Yunqi's Blog Blog</title>
-        <link>https://chenkhat.github.io/blog/blog</link>
-        <description>Chen Yunqi's Blog Blog</description>
+        <title>Viky's Blog Blog</title>
+        <link>https://viky-c.github.io/blog/blog</link>
+        <description>Viky's Blog Blog</description>
         <lastBuildDate>Sat, 29 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[2022学习目标]]></title>
-            <link>https://chenkhat.github.io/blog/blog/2022学习目标</link>
+            <link>https://viky-c.github.io/blog/blog/2022学习目标</link>
             <guid>2022学习目标</guid>
             <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[2022年学习目标]]></description>
-            <content:encoded><![CDATA[<h2>2022年学习目标</h2><h3>软实力</h3><h4>坚持记录学习笔记</h4><h4>英语、数学</h4><h5>英语</h5><p>听、说、读、写; 语音、语法</p><h4>沟通</h4><h3>硬实力</h3><h4>前端框架</h4><ul><li>vue3 <ul><li>pinia</li><li>vue-router</li></ul></li><li>react<ul><li>react-router</li><li>redux</li><li>react-query</li><li>nextjs</li></ul></li><li>Echarts</li><li>taro<ul><li>微信小程序</li></ul></li><li>Flutter</li><li>tauri<ul><li>rust</li></ul></li><li>vite</li><li>turborepo</li></ul><h4>后端框架</h4><ul><li>nestjs<ul><li>node</li><li>mysql</li><li>mongodb</li><li>redis</li><li>服务端部署等知识</li></ul></li><li>gin</li></ul><h4>AI</h4><ul><li></li></ul>]]></content:encoded>
+            <content:encoded><![CDATA[<h2>2022年学习目标</h2><p>  原本设想春节回来2月份左右开始投简历，会挺顺利的，没想到脸都快要被打肿了。<br/>
+<!-- -->BOSS上面开放了奖励，也很多人撩，无奈大部分都是一些小公司，薪酬福利都比较一般。另外
+遇到几个问题：</p><ol><li>学历成了硬性指标，本科及以上要求的公司越来越多，更明确了明年想考研的心态；</li><li>计算机基础，算是一个老生常谈的问题了，没有系统的学习，真的很缺乏信心；</li><li>随着全球化的发展，不得不考虑英语，而且发现不少公司都要求英语达到读写标准；</li><li>垂直领域的技术栈，软件+互联网现在的业务已经非常广了。电商、直播、零售、金融，各个垂直领域所采用的技术栈各不一样，而一般公司更想要一个熟悉行业的人，对于我一个做了几年教育的人来说，只能说难；</li><li>关于个人播客和开源贡献，这是一个加分项，确实开源项目的合作开发很能提高个人工程化和协作能力，今年尽量能做点什么。</li></ol><h3>软实力</h3><h4>坚持记录学习笔记</h4><h4>英语、数学</h4><h5>英语</h5><p>听、说、读、写; 语音、语法</p><h4>沟通</h4><h3>硬实力</h3><h4>计算机基础</h4><ul><li>网络协议</li><li>数据结构</li><li>算法</li></ul><h4>前端框架</h4><ul><li>vue3 <ul><li>pinia</li><li>vue-router</li></ul></li><li>react<ul><li>react-router</li><li>redux</li><li>react-query</li><li>nextjs</li></ul></li><li>Echarts</li><li>taro<ul><li>微信小程序</li></ul></li><li>Flutter</li><li>tauri<ul><li>rust</li></ul></li><li>vite</li><li>turborepo</li></ul><h4>后端框架</h4><ul><li>nestjs<ul><li>node</li><li>mysql</li><li>mongodb</li><li>redis</li><li>服务端部署等知识</li></ul></li><li>gin</li></ul><h4>AI</h4><ul><li></li></ul>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[欢迎访问]]></title>
-            <link>https://chenkhat.github.io/blog/blog/欢迎访问</link>
+            <link>https://viky-c.github.io/blog/blog/欢迎访问</link>
             <guid>欢迎访问</guid>
             <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[为什么写播客？]]></description>
