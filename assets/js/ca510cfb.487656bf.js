@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[8140],{9302:function(a){a.exports=JSON.parse('{"name":"Array","permalink":"/blog/docs/tags/array","docs":[{"id":"front-end/JavaScript/Type/Array","title":"Array","description":"","permalink":"/blog/docs/front-end/JavaScript/Type/Array"}],"allTagsPath":"/blog/docs/tags"}')}}]);

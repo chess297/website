@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[5402],{2640:function(s){s.exports=JSON.parse('{"name":"\u7b97\u6cd5","permalink":"/blog/docs/tags/\u7b97\u6cd5","docs":[{"id":"computer-basic/\u7b97\u6cd5/index","title":"\u7b97\u6cd5","description":"\u76ee\u5f55","permalink":"/blog/docs/computer-basic/\u7b97\u6cd5/"}],"allTagsPath":"/blog/docs/tags"}')}}]);
