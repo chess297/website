@@ -6,14 +6,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Chen Yunqi\'s Blog',
-  tagline: '享受编程',
-  url: 'https://chenkhat.github.io/',
+  title: 'Viky\'s Blog',
+  // tagline: '享受编程',
+  url: 'https://viky-c.github.io/',
   baseUrl: '/blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   // favicon: 'img/favicon.ico',
-  organizationName: 'ChenKhat', // Usually your GitHub org/user name.
+  organizationName: 'viky-c', // Usually your GitHub org/user name.
   projectName: 'blog', // Usually your repo name.
   deploymentBranch: 'deploy',
   trailingSlash:false,
@@ -52,20 +52,15 @@ const config = {
         items: [
           {
             type:'doc',
-            docId: 'vue/index',
-            label: 'Vue',
+            docId: 'computer-basic/index',
+            label: 'ComputerBasic',
             position:'left',
           },
           {
             type:'doc',
-            docId: 'react/index',
-            label: 'React',
-            position:'left'
-          },
-          {
-            to:'/docs/golang',
-            label: 'Golang',
-            position:'left'
+            docId: 'front-end/Vue/index',
+            label: 'FrontEnd',
+            position:'left',
           },
           {
             to:'/docs/english',
@@ -83,20 +78,26 @@ const config = {
             label: 'Framework',
             position:'left'
           },
+          // {
+          //   type:'doc',
+          //   docId: '关于面试/被面试/面试技巧',
+          //   label: '关于面试',
+          //   position:'left',
+          // },
           {
             to:'/blog',
             label: 'Blog',
             position:'right'
           },
           {
-            to: 'https://github.com/ChenKhat',
+            to: 'https://github.com/viky-c',
             label: "GitHub",
             position: 'right'
           }
         ],
       },
       footer: {
-        copyright: `Copyright © ${new Date().getFullYear()} Chen Yunqi's blog`,
+        copyright: `Copyright © ${new Date().getFullYear()} Viky's blog`,
       },
       prism: {
         theme: lightCodeTheme,
