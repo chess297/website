@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchen_viky_blog=self.webpackChunkchen_viky_blog||[]).push([[8659],{9432:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/blog/blog/tags/facebook","allTagsPath":"/blog/blog/tags","count":1}')}}]);
