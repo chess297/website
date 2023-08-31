@@ -1,43 +1,58 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Viky\'s Blog',
-  // tagline: '享受编程',
-  url: 'https://viky-c.github.io/',
-  baseUrl: '/blog/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  // favicon: 'img/favicon.ico',
-  organizationName: 'viky-c', // Usually your GitHub org/user name.
-  projectName: 'blog', // Usually your repo name.
-  deploymentBranch: 'deploy',
-  trailingSlash:false,
+  title: "Viky Site",
+  tagline: "Dinosaurs are cool",
+  favicon: "img/favicon.ico",
+
+  // Set the production url of your site here
+  url: "https://your-docusaurus-test-site.com",
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: "/",
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: "chen-viky", // Usually your GitHub org/user name.
+  projectName: "chen-viky-blog", // Usually your repo name.
+
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: "zh-CN",
+    locales: ["zh-CN"],
+  },
+
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          // editUrl: 'https://github.com/ChenKhat/blog/tree/main/docs',
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
-          blogSidebarTitle:'最新文章',
-          blogSidebarCount: 10,
           // Please change this to your repo.
-          // routeBasePath:'/',
-          // editUrl:
-          //   'https://github.com/ChenKhat/blog/tree/main/',
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -46,58 +61,73 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      hideableSidebar:true,
+      // Replace with your project's social card
+      image: "img/docusaurus-social-card.jpg",
       navbar: {
-        hideOnScroll:true,
+        title: "My Site",
+        logo: {
+          alt: "My Site Logo",
+          src: "img/logo.svg",
+        },
         items: [
           {
-            type:'doc',
-            docId: 'computer-basic/index',
-            label: 'ComputerBasic',
-            position:'left',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Tutorial",
           },
+          { to: "/blog", label: "Blog", position: "left" },
           {
-            type:'doc',
-            docId: 'front-end/Vue/index',
-            label: 'FrontEnd',
-            position:'left',
-          },
-          {
-            to:'/docs/english',
-            label: 'English',
-            position:'left'
-          },
-          {
-            to:'/docs/math',
-            label: 'Math',
-            position:'left'
-          },
-          {
-            type:'doc',
-            docId: 'framework/前端架构/工程化/编码层面的工程化',
-            label: 'Framework',
-            position:'left'
-          },
-          // {
-          //   type:'doc',
-          //   docId: '关于面试/被面试/面试技巧',
-          //   label: '关于面试',
-          //   position:'left',
-          // },
-          {
-            to:'/blog',
-            label: 'Blog',
-            position:'right'
-          },
-          {
-            to: 'https://github.com/viky-c',
+            href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
-            position: 'right'
-          }
+            position: "right",
+          },
         ],
       },
       footer: {
-        copyright: `Copyright © ${new Date().getFullYear()} Viky's blog`,
+        style: "dark",
+        links: [
+          {
+            title: "Docs",
+            items: [
+              {
+                label: "Tutorial",
+                to: "/docs/intro",
+              },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Stack Overflow",
+                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              },
+              {
+                label: "Discord",
+                href: "https://discordapp.com/invite/docusaurus",
+              },
+              {
+                label: "Twitter",
+                href: "https://twitter.com/docusaurus",
+              },
+            ],
+          },
+          {
+            title: "More",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/facebook/docusaurus",
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
