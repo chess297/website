@@ -64,7 +64,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Viky'Site",
+        title: "Viky'Website",
         logo: {
           alt: "Viky'Avatar",
           src: "img/avatar.png",
@@ -77,7 +77,7 @@ const config = {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "笔记",
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
@@ -130,7 +130,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Viky'Site.`,
+        // copyright: `Copyright © ${new Date().getFullYear()} Viky'Site.`,
       },
       prism: {
         theme: lightCodeTheme,
