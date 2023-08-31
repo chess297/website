@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Viky的个人网站",
+  title: "Viky'Website",
   tagline: "积硅步至千里，积小流以成江海",
   // favicon: "img/favicon.ico",
 
