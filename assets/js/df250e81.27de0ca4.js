@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchen_viky_blog=self.webpackChunkchen_viky_blog||[]).push([[9095],{2099:e=>{e.exports=JSON.parse('{"permalink":"/blog/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
