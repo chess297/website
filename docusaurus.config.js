@@ -6,20 +6,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Viky'Site",
-  tagline: "Dinosaurs are cool",
+  title: "Viky的个人网站",
+  tagline: "积硅步至千里，积小流以成江海",
   // favicon: "img/favicon.ico",
 
   // Set the production url of your site here
   url: "https://chen-viky.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/blog/",
+  baseUrl: "/website/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "chen-viky", // Usually your GitHub org/user name.
-  projectName: "blog", // Usually your repo name.
+  projectName: "website", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -64,11 +64,14 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        // title: "Viky Site",
-        // logo: {
-        //   alt: "My Site Logo",
-        //   src: "img/logo.svg",
-        // },
+        title: "Viky'Site",
+        logo: {
+          alt: "Viky'Avatar",
+          src: "img/avatar.png",
+          style: {
+            borderRadius: "50%",
+          },
+        },
         items: [
           {
             type: "docSidebar",
