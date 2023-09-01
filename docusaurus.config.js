@@ -9,7 +9,6 @@ const config = {
   title: "Viky'Website",
   tagline: "积硅步至千里，积小流以成江海",
   // favicon: "img/favicon.ico",
-
   // Set the production url of your site here
   url: "https://chen-viky.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -44,13 +43,14 @@ const config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+        // },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -79,7 +79,7 @@ const config = {
             position: "left",
             label: "笔记",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/chen-viky",
             label: "GitHub",
@@ -87,51 +87,51 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: "dark",
-        // links: [
-        //   {
-        //     title: "Docs",
-        //     items: [
-        //       {
-        //         label: "Tutorial",
-        //         to: "/docs/intro",
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: "Community",
-        //     items: [
-        //       {
-        //         label: "Stack Overflow",
-        //         href: "https://stackoverflow.com/questions/tagged/docusaurus",
-        //       },
-        //       {
-        //         label: "Discord",
-        //         href: "https://discordapp.com/invite/docusaurus",
-        //       },
-        //       {
-        //         label: "Twitter",
-        //         href: "https://twitter.com/docusaurus",
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: "More",
-        //     items: [
-        //       {
-        //         label: "Blog",
-        //         to: "/blog",
-        //       },
-        //       {
-        //         label: "GitHub",
-        //         href: "https://github.com/facebook/docusaurus",
-        //       },
-        //     ],
-        //   },
-        // ],
-        // copyright: `Copyright © ${new Date().getFullYear()} Viky'Site.`,
-      },
+      // footer: {
+      //   // style: "dark",
+      //   // links: [
+      //   //   {
+      //   //     title: "Docs",
+      //   //     items: [
+      //   //       {
+      //   //         label: "Tutorial",
+      //   //         to: "/docs/intro",
+      //   //       },
+      //   //     ],
+      //   //   },
+      //   //   {
+      //   //     title: "Community",
+      //   //     items: [
+      //   //       {
+      //   //         label: "Stack Overflow",
+      //   //         href: "https://stackoverflow.com/questions/tagged/docusaurus",
+      //   //       },
+      //   //       {
+      //   //         label: "Discord",
+      //   //         href: "https://discordapp.com/invite/docusaurus",
+      //   //       },
+      //   //       {
+      //   //         label: "Twitter",
+      //   //         href: "https://twitter.com/docusaurus",
+      //   //       },
+      //   //     ],
+      //   //   },
+      //   //   {
+      //   //     title: "More",
+      //   //     items: [
+      //   //       {
+      //   //         label: "Blog",
+      //   //         to: "/blog",
+      //   //       },
+      //   //       {
+      //   //         label: "GitHub",
+      //   //         href: "https://github.com/facebook/docusaurus",
+      //   //       },
+      //   //     ],
+      //   //   },
+      //   // ],
+      //   // copyright: `Copyright © ${new Date().getFullYear()} Viky'Site.`,
+      // },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
