@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://chen-viky.github.io/website/blog</id>
+    <title>Viky'Website Blog</title>
+    <updated>2023-09-01T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://chen-viky.github.io/website/blog"/>
+    <subtitle>Viky'Website Blog</subtitle>
+    <entry>
+        <title type="html"><![CDATA[欢迎访问]]></title>
+        <id>https://chen-viky.github.io/website/blog/welcome</id>
+        <link href="https://chen-viky.github.io/website/blog/welcome"/>
+        <updated>2023-09-01T00:00:00.000Z</updated>
+        <author>
+            <name>Viky Chen</name>
+            <uri>https://github.com/chen-viky</uri>
+        </author>
+    </entry>
+</feed>

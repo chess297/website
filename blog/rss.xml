@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Viky'Website Blog</title>
+        <link>https://chen-viky.github.io/website/blog</link>
+        <description>Viky'Website Blog</description>
+        <lastBuildDate>Fri, 01 Sep 2023 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-CN</language>
+        <item>
+            <title><![CDATA[欢迎访问]]></title>
+            <link>https://chen-viky.github.io/website/blog/welcome</link>
+            <guid>https://chen-viky.github.io/website/blog/welcome</guid>
+            <pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
