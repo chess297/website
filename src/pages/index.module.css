@@ -3,15 +3,6 @@
  * and scoped locally.
  */
 
-.avatar {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 2rem;
-}
-
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
