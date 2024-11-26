@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkchen_viky_blog=self.webpackChunkchen_viky_blog||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u4f60\u597d\uff01\u7f16\u7a0b","permalink":"/website/blog/hello world"}]}')}}]);
