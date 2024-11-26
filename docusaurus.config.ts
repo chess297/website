@@ -10,14 +10,14 @@ const config: Config = {
   // favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://chen-viky.github.io",
+  url: "https://viky-chen.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/website/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "chen-viky", // Usually your GitHub org/user name.
+  organizationName: "viky-chen", // Usually your GitHub org/user name.
   projectName: "website", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -39,7 +39,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          // editUrl: "https://github.com/chen-viky/website",
+          // editUrl: "https://github.com/viky-chen/website",
         },
 
         theme: {
@@ -111,7 +111,7 @@ const config: Config = {
           label: "English",
         },
         {
-          href: "https://github.com/chen-viky",
+          href: "https://github.com/viky-chen",
           label: "GitHub",
           position: "right",
         },
