@@ -6,7 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Viky‘ Site",
-  // tagline: "Dinosaurs are cool",
+  tagline: "More Professional",
   // favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -39,7 +39,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/chen-viky/website",
+          // editUrl: "https://github.com/chen-viky/website",
         },
 
         theme: {
@@ -54,12 +54,19 @@ const config: Config = {
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "Viky' Site",
+      logo: {
+        alt: "Viky' Site",
+        src: "img/avatar.jpeg",
+        style: {
+          borderRadius: "50%",
+        },
+      },
       items: [
         {
           type: "docSidebar",
-          sidebarId: "flutterSidebar",
+          sidebarId: "languageSidebar",
           position: "left",
-          label: "Flutter",
+          label: "Language",
         },
         {
           type: "docSidebar",
@@ -69,9 +76,39 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "rustSidebar",
+          sidebarId: "mobileSidebar",
           position: "left",
-          label: "Rust",
+          label: "Mobile",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "desktopSidebar",
+          position: "left",
+          label: "Desktop",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "serverSidebar",
+          position: "left",
+          label: "Server",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "aiSidebar",
+          position: "left",
+          label: "AI",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "mathSidebar",
+          position: "left",
+          label: "Math",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "englishSidebar",
+          position: "left",
+          label: "English",
         },
         {
           href: "https://github.com/chen-viky",
