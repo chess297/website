@@ -1,4 +1,4 @@
-# JavaScript 基础
+# Java 基础
 
 ## 基础概念
 

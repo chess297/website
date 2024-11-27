@@ -4,44 +4,27 @@ sidebar_position: 1
 
 # HarmonyOS
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## 介绍
 
-## Getting Started
+HarmonyOS 是华为推出的一款面向全场景的分布式操作系统，旨在为用户提供一致性的体验。HarmonyOS 通过分布式技术，将不同设备的能力整合在一起，实现设备之间的无缝连接和数据共享。HarmonyOS 支持多种设备，包括智能手机、平板电脑、智能手表、智能音箱等，可以满足用户在不同场景下的需求。
 
-Get started by **creating a new site**.
+## 基础
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### 基础语法
 
-### What you'll need
+HarmonyOS 的基础语法与其他操作系统类似，包括变量、数据类型、运算符、控制语句等。以下是一个简单的示例：
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```swift
+// 定义变量
+var name = "张三"
+// 数据类型
+let age: Int = 18
+// 运算符
+let sum = 1 + 2
+// 控制语句
+if age > 18 {
+    print("成年人")
+} else {
+    print("未成年人")
+}
 ```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
