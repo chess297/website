@@ -1,0 +1,43 @@
+---
+sidebar_position: 2
+---
+
+# 创建项目和 CLI
+
+> @nestjs/cli 除了可以创建项目之外，还有其他很多比较实用的命令，这里我们先介绍一下如何创建项目和使用 CLI 工具。
+
+## 安装 CLI 工具
+
+```bash
+# 通过npm 安装 nestjs cli 工具
+npm i -g @nestjs/cli
+# nest new $项目名 或者 nest n $项目名 创建项目
+nest new project-name
+```
+
+## 代码生成器
+
+```bash
+# 生成模块
+nest g module module-name
+# 生成控制器
+nest g controller controller-name
+# 生成服务
+nest g service service-name
+# 生成守卫
+nest g guard guard-name
+# 生成拦截器
+nest g interceptor interceptor-name
+# 生成装饰器
+nest g decorator decorator-name
+# 生成管道
+nest g pipe pipe-name
+# 生成过滤器
+nest g filter filter-name
+# 生成中间件
+nest g middleware middleware-name
+# 生成提供者
+nest g provider provider-name
+# 生成测试
+nest g test test-name
+```
