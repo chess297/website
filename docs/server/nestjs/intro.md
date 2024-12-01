@@ -4,8 +4,8 @@ sidebar_position: 1
 
 # NestJS
 
-- [项目创建和 CLI](createAndCLI.md)
-- [模块](module.md)
+- [项目创建和 CLI](createAndCLI.mdx)
+<!-- - [模块](module.md)
 - [控制器](controller.md)
 - [服务](service.md)
 - [管道](pipe.md)
@@ -18,4 +18,4 @@ sidebar_position: 1
 - [日志](log.md)
 - [定时任务](cron.md)
 - [CRUD](crud.md)
-- [Swagger](swagger.md)
+- [Swagger](swagger.md) -->
