@@ -6,7 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Chess‘ Site",
-  tagline: "More Professional",
+  tagline: "书读百遍其义自见",
   // favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -64,9 +64,9 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "webSidebar",
+          sidebarId: "clientSidebar",
           position: "left",
-          label: "Web",
+          label: "Client",
         },
         {
           type: "docSidebar",
