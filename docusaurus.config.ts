@@ -74,12 +74,12 @@ const config: Config = {
           position: "left",
           label: "Server",
         },
-        {
-          type: "docSidebar",
-          sidebarId: "aiSidebar",
-          position: "left",
-          label: "AI",
-        },
+        // {
+        //   type: "docSidebar",
+        //   sidebarId: "aiSidebar",
+        //   position: "left",
+        //   label: "AI",
+        // },
         {
           href: "https://github.com/chess297",
           label: "GitHub",
