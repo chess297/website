@@ -64,15 +64,33 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
+          sidebarId: "frontendSidebar",
+          position: "left",
+          label: "Frontend",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "clientSidebar",
           position: "left",
           label: "Client",
         },
         {
           type: "docSidebar",
-          sidebarId: "serverSidebar",
+          sidebarId: "backendSidebar",
           position: "left",
-          label: "Server",
+          label: "Backend",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "databaseSidebar",
+          position: "left",
+          label: "Database",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "devopsSidebar",
+          position: "left",
+          label: "Devops",
         },
         // {
         //   type: "docSidebar",

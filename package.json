@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start -p 9001",
+    "start": "docusaurus start -p 3000",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "USE_SSH=true docusaurus deploy",
