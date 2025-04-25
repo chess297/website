@@ -1,5 +1,5 @@
 ---
-title: NestJS 中使用配置
+title: NestJS
 ---
 
 ## 项目初始化
