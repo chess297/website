@@ -155,247 +155,339 @@ let arr = [1, 2, null]; // 推断为 number[]
 3. TypeScript Playground
 4. ts-node（运行 TypeScript 文件）
 
-## 更多基础类型
+## 类型系统基础概念
 
-### 字面量类型
+### 1. 结构化类型系统
+
+TypeScript 采用结构化类型系统(Structural Type System)，也称为"鸭子类型"：
 
 ```typescript
-// 字符串字面量类型
-type Direction = "north" | "south" | "east" | "west";
-let direction: Direction = "north"; // 只能是这四个值之一
+interface Point {
+  x: number;
+  y: number;
+}
 
-// 数字字面量类型
+function logPoint(p: Point) {
+  console.log(`${p.x}, ${p.y}`);
+}
+
+// 正常工作，因为结构匹配
+const point3d = { x: 12, y: 26, z: 89 };
+logPoint(point3d); // logs "12, 26"
+```
+
+### 2. 类型推导
+
+TypeScript 的类型推导系统非常强大：
+
+```typescript
+// 变量类型推导
+let message = "hello!"; // 推导为 string 类型
+
+// 上下文类型推导
+window.onmousedown = function (mouseEvent) {
+  console.log(mouseEvent.button); // <- 自动推导为 MouseEvent
+};
+
+// 返回类型推导
+function createZoo() {
+  return [
+    { name: "Lion", age: 4 },
+    { name: "Zebra", age: 2 },
+  ]; // 推导为 { name: string, age: number }[]
+}
+```
+
+### 3. 类型保护机制
+
+TypeScript 提供了多种类型保护机制：
+
+```typescript
+// typeof 类型保护
+function padLeft(value: string, padding: string | number) {
+  if (typeof padding === "number") {
+    return " ".repeat(padding) + value;
+  }
+  return padding + value;
+}
+
+// instanceof 类型保护
+class Bird {
+  fly() {}
+  layEggs() {}
+}
+
+class Fish {
+  swim() {}
+  layEggs() {}
+}
+
+function getSmallPet(): Fish | Bird {
+  // ...
+  return new Fish();
+}
+
+const pet = getSmallPet();
+if (pet instanceof Bird) {
+  pet.fly();
+}
+
+// in 操作符类型保护
+interface A {
+  x: number;
+}
+interface B {
+  y: string;
+}
+
+function doStuff(q: A | B) {
+  if ("x" in q) {
+    // q: A
+  } else {
+    // q: B
+  }
+}
+
+// 自定义类型保护
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+```
+
+### 4. 高级类型特性
+
+```typescript
+// 联合类型（Union Types）
+type StringOrNumber = string | number;
+
+// 交叉类型（Intersection Types）
+type Combined = { a: string } & { b: number };
+
+// 类型别名（Type Aliases）
+type Point = {
+  x: number;
+  y: number;
+};
+
+// 字面量类型（Literal Types）
+type Direction = "North" | "South" | "East" | "West";
 type DiceRoll = 1 | 2 | 3 | 4 | 5 | 6;
-let diceRoll: DiceRoll = 1;
 
-// 布尔字面量类型
-type TRUE = true;
-let t: TRUE = true; // 只能是 true
-```
-
-### 枚举类型
-
-```typescript
-// 数字枚举
-enum Status {
-  Active = 1,
-  Inactive = 2,
-  Pending = 3,
+// 可辨识联合（Discriminated Unions）
+interface Circle {
+  kind: "circle";
+  radius: number;
 }
-
-// 字符串枚举
-enum Direction {
-  Up = "UP",
-  Down = "DOWN",
-  Left = "LEFT",
-  Right = "RIGHT",
+interface Square {
+  kind: "square";
+  sideLength: number;
 }
+type Shape = Circle | Square;
 
-// 常量枚举
-const enum Constants {
-  Max = 100,
-  Min = 0,
+// 索引类型（Index Types）
+interface ErrorContainer {
+  [prop: string]: string;
 }
 ```
 
-### 工具类型
-
-TypeScript 提供了多个实用的工具类型：
+### 5. 模块化类型定义
 
 ```typescript
-// 1. Partial - 使所有属性可选
-interface Todo {
-  title: string;
-  description: string;
-  completed: boolean;
-}
-
-type PartialTodo = Partial<Todo>;
-// 等价于:
-// {
-//   title?: string;
-//   description?: string;
-//   completed?: boolean;
-// }
-
-// 2. Required - 使所有属性必需
-interface Props {
-  a?: number;
-  b?: string;
-}
-
-const obj: Required<Props> = { a: 5, b: "hello" }; // 必须提供所有属性
-
-// 3. Record - 创建属性为指定类型的对象类型
-type PageInfo = Record<"home" | "about" | "contact", { title: string }>;
-// 等价于:
-// {
-//   home: { title: string },
-//   about: { title: string },
-//   contact: { title: string }
-// }
-
-// 4. Pick - 从类型中选择部分属性
-interface Person {
-  name: string;
-  age: number;
-  address: string;
-}
-
-type NameAndAge = Pick<Person, "name" | "age">;
-// 等价于:
-// {
-//   name: string;
-//   age: number;
-// }
-
-// 5. Omit - 从类型中排除部分属性
-type AddressOnly = Omit<Person, "name" | "age">;
-// 等价于:
-// {
-//   address: string;
-// }
-```
-
-### 高级工具类型
-
-```typescript
-// 1. ReturnType - 获取函数返回值类型
-function getUser() {
-  return { name: "John", age: 30 };
-}
-
-type User = ReturnType<typeof getUser>;
-// 等价于:
-// {
-//   name: string;
-//   age: number;
-// }
-
-// 2. Parameters - 获取函数参数类型
-function buildUser(name: string, age: number) {
-  return { name, age };
-}
-
-type BuildUserParams = Parameters<typeof buildUser>;
-// 等价于: [string, number]
-
-// 3. InstanceType - 获取构造函数实例类型
-class Point {
-  constructor(public x: number, public y: number) {}
-}
-
-type PointInstance = InstanceType<typeof Point>;
-// 等价于 Point
-
-// 4. ThisType - 指定 this 上下文类型
-interface ThisContext {
+// 导出类型定义
+export interface User {
+  id: number;
   name: string;
 }
 
-interface Methods {
-  hello(): void;
-}
+export type UserRole = "admin" | "user" | "guest";
 
-type ObjectWithMethods = Methods & ThisType<ThisContext>;
-```
+// 导入类型定义
+import type { User, UserRole } from "./types";
 
-## 类型断言最佳实践
-
-```typescript
-// 1. 双重断言
-let someValue: unknown = "this is a string";
-let strLength: number = (someValue as unknown as string).length;
-
-// 2. 非空断言
-function processValue(value: string | null) {
-  // 使用 ! 断言值不为 null
-  console.log(value!.length);
-}
-
-// 3. 类型谓词
-function isString(value: unknown): value is string {
-  return typeof value === "string";
-}
-
-function processValue(value: unknown) {
-  if (isString(value)) {
-    console.log(value.length); // value 被推断为 string 类型
+// 命名空间组织类型
+namespace Validation {
+  export interface StringValidator {
+    isAcceptable(s: string): boolean;
   }
 }
 ```
 
-## 配置文件详解
+### 6. 类型兼容性规则
 
-详细的 tsconfig.json 配置选项：
+```typescript
+// 对象类型兼容性
+interface Pet {
+  name: string;
+}
+interface Dog {
+  name: string;
+  breed: string;
+}
+let pet: Pet;
+let dog: Dog = { name: "Rover", breed: "Collie" };
+pet = dog; // OK
+
+// 函数类型兼容性
+let x = (a: number) => 0;
+let y = (b: number, s: string) => 0;
+x = y; // Error
+y = x; // OK
+
+// 泛型类型兼容性
+interface Empty<T> {}
+let x: Empty<number>;
+let y: Empty<string>;
+x = y; // OK，因为结构相同
+
+// 类的兼容性检查
+class Animal {
+  feet: number;
+  constructor(name: string, numFeet: number) {}
+}
+class Size {
+  feet: number;
+  constructor(meters: number) {}
+}
+let a: Animal;
+let s: Size;
+a = s; // OK
+s = a; // OK
+```
+
+## 工具链与配置
+
+### 1. 编译器配置详解
 
 ```json
 {
   "compilerOptions": {
-    // 基础选项
-    "target": "es2020", // 指定 ECMAScript 目标版本
-    "module": "commonjs", // 指定模块系统
-    "lib": ["es2020", "dom"], // 指定要包含的库文件
-    "sourceMap": true, // 生成相应的 .map 文件
-
-    // 严格类型检查
-    "strict": true, // 启用所有严格类型检查选项
-    "noImplicitAny": true, // 禁止隐式的 any 类型
-    "strictNullChecks": true, // 启用严格的 null 检查
+    // 基础配置
+    "target": "es2020", // 编译目标版本
+    "module": "esnext", // 模块系统
+    "lib": ["es2020", "dom"], // 包含的库文件
+    "outDir": "./dist", // 输出目录
 
     // 模块解析
-    "baseUrl": "./", // 基础目录
+    "moduleResolution": "node", // 模块解析策略
+    "baseUrl": "./src", // 基础目录
     "paths": {
       // 路径映射
-      "@/*": ["src/*"]
+      "@/*": ["*"]
     },
-    "esModuleInterop": true, // 启用 ES 模块互操作性
 
-    // 高级选项
-    "experimentalDecorators": true, // 启用装饰器
-    "emitDecoratorMetadata": true // 为装饰器发出类型元数据
+    // 类型检查
+    "strict": true, // 严格模式
+    "noImplicitAny": true, // 禁止隐式any
+    "strictNullChecks": true, // 严格的null检查
+
+    // 构建优化
+    "incremental": true, // 增量编译
+    "tsBuildInfoFile": "./cache", // 编译缓存
+    "skipLibCheck": true, // 跳过库文件检查
+
+    // JSX支持
+    "jsx": "react", // JSX处理方式
+    "jsxFactory": "React.createElement",
+
+    // 装饰器支持
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // 源码映射
+    "sourceMap": true, // 生成sourceMap
+    "declaration": true, // 生成声明文件
+    "declarationMap": true // 声明文件的sourceMap
   },
-  "include": [
-    "src/**/*" // 指定要编译的文件
-  ],
-  "exclude": [
-    "node_modules", // 指定要排除的文件
-    "**/*.spec.ts"
+  "include": ["src/**/*"], // 包含的文件
+  "exclude": ["node_modules"] // 排除的文件
+}
+```
+
+### 2. 开发工具配置
+
+#### VSCode 配置
+
+```json
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["typescript", "typescriptreact"]
+}
+```
+
+#### ESLint 配置
+
+```json
+{
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-explicit-any": "error"
+  }
+}
+```
+
+### 3. 常用开发工具
+
+#### 类型检查工具
+
+- TSLint (已弃用，推荐使用 ESLint)
+- ESLint + @typescript-eslint
+- Type Coverage
+
+#### 编译工具
+
+- tsc (TypeScript 官方编译器)
+- ts-node (直接运行 TypeScript)
+- ts-jest (Jest 的 TypeScript 预处理器)
+- babel-loader + @babel/preset-typescript
+
+#### IDE 插件
+
+- TypeScript Language Features
+- TypeScript Import Sorter
+- TypeScript Hero
+- Pretty TypeScript Errors
+
+### 4. 调试配置
+
+#### VSCode Launch 配置
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug TypeScript",
+      "program": "${workspaceFolder}/src/index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "sourceMaps": true
+    }
   ]
 }
 ```
 
-## 类型系统最佳实践
+#### 断点调试
 
-1. **类型推断**
+```typescript
+// 使用 debugger 语句
+function debugMe() {
+  let x = 1;
+  debugger; // IDE会在这里停住
+  x++;
+  return x;
+}
 
-   - 尽可能利用 TypeScript 的类型推断
-   - 避免不必要的类型注解
-   - 使用 as const 进行字面量推断
-
-2. **类型安全**
-
-   - 避免使用 any
-   - 使用 unknown 代替 any
-   - 严格开启 strictNullChecks
-
-3. **代码组织**
-
-   - 使用命名空间组织代码
-   - 适当使用模块导入导出
-   - 合理使用类型声明文件
-
-4. **错误处理**
-
-   - 使用自定义类型守卫
-   - 合理使用可选链和空值合并
-   - 异常处理类型化
-
-5. **性能考虑**
-   - 避免过度使用泛型
-   - 合理使用类型缓存
-   - 控制类型计算的复杂度
-
-```
-
+// 使用 console
+console.log("Debug info");
+console.warn("Warning message");
+console.error("Error occurred");
 ```

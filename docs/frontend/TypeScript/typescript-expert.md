@@ -227,13 +227,132 @@ function transform(context: ts.TransformationContext) {
 4. 编译缓存策略
 5. 类型声明文件优化
 
-## TypeScript 5.0+ 新特性
+## TypeScript 5.0+ 最新特性详解
 
-1. const 类型参数
-2. `using` 声明
-3. 装饰器元数据
-4. 隐式类型导入
-5. 模板字符串类型改进
+### 1. const 类型参数
+
+```typescript
+function first<const T extends readonly unknown[]>(array: T) {
+  return array[0] as T[0];
+}
+
+// 现在字面量类型会被保留
+const tuple = ["hello", 42] as const;
+const firstElement = first(tuple); // type is 'hello'
+```
+
+### 2. decorator 元数据
+
+```typescript
+@defineMetadata("key", "value")
+class Example {
+  @logMetadata
+  method() {}
+}
+
+// 新的装饰器元数据 API
+function defineMetadata(key: string, value: any) {
+  return function (target: any) {
+    Reflect.defineMetadata(key, value, target);
+  };
+}
+```
+
+### 3. 装饰器自动推断
+
+```typescript
+class Person {
+  @logged
+  greet() {
+    return "Hello!";
+  }
+}
+
+// 装饰器现在可以自动推断类型
+function logged<This, Args extends any[], Return>(
+  target: (this: This, ...args: Args) => Return,
+  context: ClassMethodDecoratorContext<
+    This,
+    (this: This, ...args: Args) => Return
+  >
+) {
+  return function (this: This, ...args: Args): Return {
+    console.log("Method called:", context.name);
+    return target.apply(this, args);
+  };
+}
+```
+
+### 4. 模板字符串类型改进
+
+```typescript
+type Colors = "red" | "blue" | "green";
+type RGB = `rgb(${number}, ${number}, ${number})`;
+type ColorNames = `${Colors}Color`; // 'redColor' | 'blueColor' | 'greenColor'
+
+// 新的模板字符串类型推导
+type ExtractValue<S extends string> = S extends `${infer Value} ${string}`
+  ? Value
+  : never;
+
+type T0 = ExtractValue<"123 456">; // "123"
+```
+
+### 5. satisfies 操作符增强
+
+```typescript
+type Theme = {
+  primary: string;
+  secondary: string;
+  [k: string]: string | undefined;
+};
+
+const theme = {
+  primary: "#333",
+  secondary: "#666",
+  accent: "#888",
+} satisfies Theme;
+
+// theme.primary 的类型依然是字符串字面量类型 '#333'
+const primaryColor = theme.primary;
+
+// 同时保证了类型安全
+const invalid = {
+  primary: 123, // Error: Type 'number' is not assignable to type 'string'
+  secondary: "#666",
+} satisfies Theme;
+```
+
+### 6. 类型安全的 using 声明
+
+```typescript
+class Resource {
+  [Symbol.dispose]() {
+    // cleanup logic
+  }
+}
+
+using resource = new Resource();
+// resource 会在作用域结束时自动释放
+
+async function example() {
+  await using connection = await db.connect();
+  // connection 会在异步操作完成后自动关闭
+}
+```
+
+### 7. 类型导入优化
+
+```typescript
+// 导入类型时不再需要明确指定 type
+import { UserType } from "./types";
+
+// 或者使用新的语法
+import type { UserType } from "./types";
+
+// 支持类型导入断言
+import { type UserType, createUser } from "./types";
+```
 
 ## 高级类型系统
 
