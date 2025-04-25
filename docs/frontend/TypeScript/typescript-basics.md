@@ -20,6 +20,7 @@ tsc --init
 ## 基础类型
 
 ### 1. 原始类型
+
 ```typescript
 let isDone: boolean = false;
 let decimal: number = 6;
@@ -29,6 +30,7 @@ let tuple: [string, number] = ["hello", 10];
 ```
 
 ### 2. 特殊类型
+
 ```typescript
 let u: undefined = undefined;
 let n: null = null;
@@ -43,14 +45,14 @@ let never: never; // 永远不会有返回值的函数
 interface Person {
   name: string;
   age: number;
-  readonly id: number;    // 只读属性
-  optional?: string;      // 可选属性
+  readonly id: number; // 只读属性
+  optional?: string; // 可选属性
 }
 
 let user: Person = {
   name: "Tom",
   age: 25,
-  id: 1
+  id: 1,
 };
 ```
 
@@ -59,11 +61,11 @@ let user: Person = {
 ```typescript
 class Animal {
   private name: string;
-  
+
   constructor(name: string) {
     this.name = name;
   }
-  
+
   move(distance: number = 0) {
     console.log(`${this.name} moved ${distance}m.`);
   }
@@ -73,17 +75,19 @@ class Animal {
 ## 函数
 
 ### 1. 函数类型
+
 ```typescript
 function add(x: number, y: number): number {
   return x + y;
 }
 
 // 箭头函数
-let myAdd: (x: number, y: number) => number = 
-    (x: number, y: number): number => x + y;
+let myAdd: (x: number, y: number) => number = (x: number, y: number): number =>
+  x + y;
 ```
 
 ### 2. 可选参数和默认参数
+
 ```typescript
 function buildName(firstName: string, lastName?: string): string {
   return lastName ? firstName + " " + lastName : firstName;
@@ -154,6 +158,7 @@ let arr = [1, 2, null]; // 推断为 number[]
 ## 更多基础类型
 
 ### 字面量类型
+
 ```typescript
 // 字符串字面量类型
 type Direction = "north" | "south" | "east" | "west";
@@ -169,12 +174,13 @@ let t: TRUE = true; // 只能是 true
 ```
 
 ### 枚举类型
+
 ```typescript
 // 数字枚举
 enum Status {
   Active = 1,
   Inactive = 2,
-  Pending = 3
+  Pending = 3,
 }
 
 // 字符串枚举
@@ -182,13 +188,13 @@ enum Direction {
   Up = "UP",
   Down = "DOWN",
   Left = "LEFT",
-  Right = "RIGHT"
+  Right = "RIGHT",
 }
 
 // 常量枚举
 const enum Constants {
   Max = 100,
-  Min = 0
+  Min = 0,
 }
 ```
 
@@ -327,32 +333,33 @@ function processValue(value: unknown) {
 {
   "compilerOptions": {
     // 基础选项
-    "target": "es2020",             // 指定 ECMAScript 目标版本
-    "module": "commonjs",           // 指定模块系统
-    "lib": ["es2020", "dom"],      // 指定要包含的库文件
-    "sourceMap": true,             // 生成相应的 .map 文件
-    
+    "target": "es2020", // 指定 ECMAScript 目标版本
+    "module": "commonjs", // 指定模块系统
+    "lib": ["es2020", "dom"], // 指定要包含的库文件
+    "sourceMap": true, // 生成相应的 .map 文件
+
     // 严格类型检查
-    "strict": true,                // 启用所有严格类型检查选项
-    "noImplicitAny": true,        // 禁止隐式的 any 类型
-    "strictNullChecks": true,     // 启用严格的 null 检查
-    
+    "strict": true, // 启用所有严格类型检查选项
+    "noImplicitAny": true, // 禁止隐式的 any 类型
+    "strictNullChecks": true, // 启用严格的 null 检查
+
     // 模块解析
-    "baseUrl": "./",              // 基础目录
-    "paths": {                    // 路径映射
+    "baseUrl": "./", // 基础目录
+    "paths": {
+      // 路径映射
       "@/*": ["src/*"]
     },
-    "esModuleInterop": true,      // 启用 ES 模块互操作性
-    
+    "esModuleInterop": true, // 启用 ES 模块互操作性
+
     // 高级选项
-    "experimentalDecorators": true,    // 启用装饰器
-    "emitDecoratorMetadata": true,    // 为装饰器发出类型元数据
+    "experimentalDecorators": true, // 启用装饰器
+    "emitDecoratorMetadata": true // 为装饰器发出类型元数据
   },
   "include": [
-    "src/**/*"                    // 指定要编译的文件
+    "src/**/*" // 指定要编译的文件
   ],
   "exclude": [
-    "node_modules",               // 指定要排除的文件
+    "node_modules", // 指定要排除的文件
     "**/*.spec.ts"
   ]
 }
@@ -361,21 +368,25 @@ function processValue(value: unknown) {
 ## 类型系统最佳实践
 
 1. **类型推断**
+
    - 尽可能利用 TypeScript 的类型推断
    - 避免不必要的类型注解
    - 使用 as const 进行字面量推断
 
 2. **类型安全**
+
    - 避免使用 any
    - 使用 unknown 代替 any
    - 严格开启 strictNullChecks
 
 3. **代码组织**
+
    - 使用命名空间组织代码
    - 适当使用模块导入导出
    - 合理使用类型声明文件
 
 4. **错误处理**
+
    - 使用自定义类型守卫
    - 合理使用可选链和空值合并
    - 异常处理类型化
@@ -384,4 +395,7 @@ function processValue(value: unknown) {
    - 避免过度使用泛型
    - 合理使用类型缓存
    - 控制类型计算的复杂度
+
+```
+
 ```

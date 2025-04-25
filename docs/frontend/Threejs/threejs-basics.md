@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Three.js 基础知识
 
 ## 1. Three.js 简介

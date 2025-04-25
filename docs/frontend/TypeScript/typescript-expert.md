@@ -6,6 +6,7 @@ sidebar_position: 3
 ## 类型系统深入
 
 ### 1. 条件类型（Conditional Types）
+
 ```typescript
 type TypeName<T> = T extends string
   ? "string"
@@ -21,8 +22,9 @@ type TypeName<T> = T extends string
 ```
 
 ### 2. 递归类型
+
 ```typescript
-type JSONValue = 
+type JSONValue =
   | string
   | number
   | boolean
@@ -36,6 +38,7 @@ type DeepReadonly<T> = {
 ```
 
 ### 3. 高级映射类型
+
 ```typescript
 // 将所有属性变为可选的同时保持只读
 type DeepPartialReadonly<T> = {
@@ -53,6 +56,7 @@ type RequiredProperties<T> = {
 ## 类型推断高级技巧
 
 ### 1. infer 关键字进阶
+
 ```typescript
 // 提取函数返回类型
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
@@ -65,6 +69,7 @@ type ElementType<T> = T extends (infer U)[] ? U : never;
 ```
 
 ### 2. 分发条件类型
+
 ```typescript
 type ToArray<T> = T extends any ? T[] : never;
 type StrNumArr = ToArray<string | number>; // string[] | number[]
@@ -76,6 +81,7 @@ type NoDistribute<T> = [T] extends [any] ? T[] : never;
 ## 装饰器进阶
 
 ### 1. 参数装饰器
+
 ```typescript
 function validate(target: any, propertyKey: string, parameterIndex: number) {
   // 参数验证逻辑
@@ -89,24 +95,25 @@ class Example {
 ```
 
 ### 2. 属性装饰器
+
 ```typescript
 function format(formatString: string) {
   return function (target: any, propertyKey: string): any {
     let value: string;
-    
-    const getter = function() {
+
+    const getter = function () {
       return `${formatString} ${value}`;
     };
-    
-    const setter = function(newVal: string) {
+
+    const setter = function (newVal: string) {
       value = newVal;
     };
-    
+
     Object.defineProperty(target, propertyKey, {
       get: getter,
       set: setter,
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
   };
 }
@@ -115,6 +122,7 @@ function format(formatString: string) {
 ## 高级类型操作
 
 ### 1. 类型体操
+
 ```typescript
 // 字符串字面量操作
 type Trim<S extends string> = S extends ` ${infer R}` | `${infer R} `
@@ -122,16 +130,20 @@ type Trim<S extends string> = S extends ` ${infer R}` | `${infer R} `
   : S;
 
 // 联合类型转交叉类型
-type UnionToIntersection<U> = 
-  (U extends any ? (k: U) => void : never) extends ((k: infer I) => void) ? I : never;
+type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
+  k: infer I
+) => void
+  ? I
+  : never;
 
 // 提取必需属性
 type RequiredKeys<T> = {
-  [K in keyof T]: {} extends Pick<T, K> ? never : K
+  [K in keyof T]: {} extends Pick<T, K> ? never : K;
 }[keyof T];
 ```
 
 ### 2. 高级类型推导
+
 ```typescript
 // 获取函数的参数类型元组
 type Parameters<T> = T extends (...args: infer P) => any ? P : never;
@@ -140,14 +152,13 @@ type Parameters<T> = T extends (...args: infer P) => any ? P : never;
 type Awaited<T> = T extends Promise<infer U> ? U : T;
 
 // 递归展开Promise
-type DeepAwaited<T> = T extends Promise<infer U>
-  ? DeepAwaited<U>
-  : T;
+type DeepAwaited<T> = T extends Promise<infer U> ? DeepAwaited<U> : T;
 ```
 
 ## 模块系统高级特性
 
 ### 1. 模块扩充
+
 ```typescript
 declare module "lodash" {
   interface LoDashStatic {
@@ -157,21 +168,23 @@ declare module "lodash" {
 ```
 
 ### 2. 环境声明
+
 ```typescript
 declare global {
   interface Window {
     customProperty: string;
   }
-  
+
   interface Array<T> {
     customMethod(): T;
   }
 }
 ```
 
-## 编译器API和AST
+## 编译器 API 和 AST
 
-### 1. 使用编译器API
+### 1. 使用编译器 API
+
 ```typescript
 import * as ts from "typescript";
 
@@ -190,7 +203,8 @@ function createCompilerHost(options: ts.CompilerOptions): ts.CompilerHost {
 }
 ```
 
-### 2. AST转换
+### 2. AST 转换
+
 ```typescript
 function transform(context: ts.TransformationContext) {
   return (sourceFile: ts.SourceFile) => {
@@ -224,6 +238,7 @@ function transform(context: ts.TransformationContext) {
 ## 高级类型系统
 
 ### 1. 类型系统设计模式
+
 ```typescript
 // 访问者模式
 interface Visitor<T> {
@@ -254,15 +269,21 @@ class Singleton {
 ```
 
 ### 2. 高级类型运算
+
 ```typescript
 // 联合类型分发
-type UnionToTuple<T> = 
-  (T extends any ? (t: T) => 0 : never) extends
-  (t: infer U) => 0 ? U : never;
+type UnionToTuple<T> = (T extends any ? (t: T) => 0 : never) extends (
+  t: infer U
+) => 0
+  ? U
+  : never;
 
 // 对象深度比较
-type IsEqual<X, Y> = (<T>() => T extends X ? 1 : 2) extends
-  (<T>() => T extends Y ? 1 : 2) ? true : false;
+type IsEqual<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y
+  ? 1
+  : 2
+  ? true
+  : false;
 
 // 递归类型转换
 type DeepPromiseValueType<T> = T extends Promise<infer U>
@@ -271,6 +292,7 @@ type DeepPromiseValueType<T> = T extends Promise<infer U>
 ```
 
 ### 3. 类型约束模式
+
 ```typescript
 // 确保类实现特定方法
 type Constructor<T = {}> = new (...args: any[]) => T;
@@ -303,7 +325,7 @@ class TypeSafeEventEmitter {
 
   emit<K extends keyof EventMap>(event: K, data: EventMap[K]) {
     const handlers = this.handlers[event] || [];
-    handlers.forEach(handler => handler(data));
+    handlers.forEach((handler) => handler(data));
   }
 }
 ```
@@ -311,6 +333,7 @@ class TypeSafeEventEmitter {
 ## 编译器插件开发
 
 ### 1. 自定义转换器
+
 ```typescript
 import * as ts from "typescript";
 
@@ -333,12 +356,13 @@ const result = ts.transform(sourceFile, [transformer]);
 ```
 
 ### 2. 类型检查插件
+
 ```typescript
 import * as ts from "typescript";
 
 function createTypeChecker(program: ts.Program) {
   const checker = program.getTypeChecker();
-  
+
   function checkNode(node: ts.Node) {
     const type = checker.getTypeAtLocation(node);
     if (checker.isTypeAssignableTo(type, someType)) {
@@ -347,7 +371,7 @@ function createTypeChecker(program: ts.Program) {
   }
 
   return {
-    checkNode
+    checkNode,
   };
 }
 ```
@@ -355,12 +379,14 @@ function createTypeChecker(program: ts.Program) {
 ## 高级泛型应用
 
 ### 1. 高阶泛型组件
+
 ```typescript
 // 泛型组件包装器
 type ComponentWrapper<P> = {
-  <T extends P>(Component: React.ComponentType<T>): 
-    React.ComponentType<Omit<T, keyof P>>;
-}
+  <T extends P>(Component: React.ComponentType<T>): React.ComponentType<
+    Omit<T, keyof P>
+  >;
+};
 
 // 泛型高阶组件
 function withData<T, P>(
@@ -377,15 +403,14 @@ function withData<T, P>(
 
     render() {
       const { data } = this.state;
-      return data ? (
-        <WrappedComponent {...this.props} data={data} />
-      ) : null;
+      return data ? <WrappedComponent {...this.props} data={data} /> : null;
     }
   };
 }
 ```
 
-### 2. 类型安全的Redux
+### 2. 类型安全的 Redux
+
 ```typescript
 // Action类型
 type ActionCreator<T extends string, P = void> = P extends void
@@ -414,7 +439,7 @@ function createStore<S, A>(
     getState: () => state,
     dispatch: (action: A) => {
       state = reducer(state, action);
-      listeners.forEach(listener => listener());
+      listeners.forEach((listener) => listener());
     },
     subscribe: (listener: () => void) => {
       listeners.push(listener);
@@ -422,7 +447,7 @@ function createStore<S, A>(
         const index = listeners.indexOf(listener);
         if (index > -1) listeners.splice(index, 1);
       };
-    }
+    },
   };
 }
 ```
@@ -430,6 +455,7 @@ function createStore<S, A>(
 ## 类型系统内部原理
 
 ### 1. 结构化类型系统
+
 ```typescript
 // TypeScript使用结构化类型系统
 interface Point2D {
@@ -451,12 +477,13 @@ let point3D: Point3D = { x: 0, y: 0, z: 0 };
 ```
 
 ### 2. 类型擦除
+
 ```typescript
 // 运行时类型信息保留
 function preserveRuntime<T>(value: T) {
   return {
     value,
-    type: typeof value
+    type: typeof value,
   };
 }
 
@@ -475,7 +502,8 @@ class Example {
 
 ## 工程化最佳实践
 
-### 1. monorepo类型管理
+### 1. monorepo 类型管理
+
 ```typescript
 // tsconfig.base.json
 {
@@ -497,6 +525,7 @@ class Example {
 ```
 
 ### 2. 类型声明优化
+
 ```typescript
 // 优化类型导入
 import type { SomeType } from './types';
@@ -518,6 +547,7 @@ declare module 'my-library' {
 ```
 
 ### 3. 构建优化
+
 ```typescript
 // webpack配置
 module.exports = {
